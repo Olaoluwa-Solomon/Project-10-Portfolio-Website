@@ -15,15 +15,15 @@
   --body-font: "Poppins", sans-serif;
   --big-font-size: 2rem;
   --h2-font-size: 1.25rem;
-  --normal-font-size: .938rem;
-  --smaller-font-size: .75rem;
+  --normal-font-size: 0.938rem;
+  --smaller-font-size: 0.75rem;
 
   /*===== Margins =====*/
   --mb-2: 1rem;
   --mb-4: 2rem;
   --mb-5: 2.5rem;
   --mb-6: 3rem;
-  
+
   /*===== z index =====*/
   --z-back: -10;
   --z-fixed: 100;
@@ -33,12 +33,14 @@
     --big-font-size: 3.5rem;
     --h2-font-size: 2rem;
     --normal-font-size: 1rem;
-    --smaller-font-size: .875rem;
+    --smaller-font-size: 0.875rem;
   }
 }
 
 /*===== BASE =====*/
-*, ::before, ::after {
+*,
+::before,
+::after {
   box-sizing: border-box;
 }
 
@@ -53,7 +55,9 @@ body {
   color: var(--second-color);
 }
 
-h1, h2, p {
+h1,
+h2,
+p {
   margin: 0;
 }
 
@@ -339,18 +343,18 @@ img {
   top: 0;
   left: 0;
   transition: 0.5s;
+  /* background-color: red; */
 }
 
 .layer:hover {
   background: rgba(145, 89, 42, 0.7);
-
 }
 
 .layer h3 {
   width: 100%;
-  font-weight: 500;
+  font-weight: 700;
   color: #fff;
-  font-size: 26px;
+  font-size: 20px;
   bottom: 0;
   left: 60%;
   transform: translateX(-50%);
@@ -363,7 +367,7 @@ img {
 }
 
 .layer:hover h3 {
-  bottom: 10%;
+  bottom: 6%;
   opacity: 1;
 }
 
@@ -389,30 +393,10 @@ img {
 }
 
 @media screen and (max-width: 325px) {
-.layer h3 {
-  font-size: 21px;
-}
-}
-
-/* @media screen and (max-width: 850px){
   .layer h3 {
-    font-size: 15px;
-    margin-bottom: 30px;
+    font-size: 21px;
   }
-
-  .layerbtn {
-    font-size: 10px;
-    width: 40%;
-    height: 30px;
-    padding: 0 0;
-  }
-
-  .row {
-    flex-direction: column;
-  }
-} */
-
-
+}
 
 /* ===== CONTACT =====*/
 
@@ -427,7 +411,6 @@ img {
 .contact-us {
   width: 80%;
   margin: auto;
-
 }
 
 .contact-col {
@@ -464,7 +447,7 @@ img {
   margin-left: 0;
 }
 
-@media(max-width: 700px) {
+@media (max-width: 700px) {
   .row {
     flex-direction: column;
     padding: 1em 4%;
@@ -478,8 +461,6 @@ img {
     margin-bottom: 1.7em;
   }
 }
-
-
 
 /* ===== FOOTER =====*/
 .footer {
