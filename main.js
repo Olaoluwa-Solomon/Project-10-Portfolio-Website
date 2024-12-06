@@ -13,6 +13,7 @@ showMenu("nav-toggle", "nav-menu");
 
 /*==================== REMOVE MENU MOBILE ====================*/
 const navLink = document.querySelectorAll(".nav__link");
+const toggleBtn = document.querySelector(".toggle-btn"); // Select the toggle-btn element
 
 function linkAction() {
   const navMenu = document.getElementById("nav-menu");
@@ -20,7 +21,10 @@ function linkAction() {
   navMenu.classList.remove("show");
 }
 navLink.forEach((n) => n.addEventListener("click", linkAction));
-
+// Add event listener to the toggle-btn element
+if (toggleBtn) {
+  toggleBtn.addEventListener("click", linkAction);
+}
 /*==================== SCROLL SECTIONS ACTIVE LINK ====================*/
 const sections = document.querySelectorAll("section[id]");
 
@@ -60,4 +64,30 @@ sr.reveal(".home__img, .about__subtitle, .about__text, .skills__img", {
 sr.reveal(".home__social-icon", { interval: 200 });
 sr.reveal(".skills__data, .work__img, .contact__input, .contact__button", {
   interval: 200,
+});
+
+// ================DARK THEME===================
+document.addEventListener("DOMContentLoaded", () => {
+  const darkModeToggle = document.getElementById("darkModeToggle");
+  const toggleIcon = document.getElementById("toggleIcon");
+  const moonIcon = "assets/img/moon-6688.png"; // Path to your moon icon image
+  const sunIcon = "assets/img/sun-3337.png"; // Path to your sun icon image
+
+  // Check for saved theme in localStorage
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+    document.body.classList.add("dark-mode");
+    toggleIcon.src = sunIcon;
+  }
+
+  darkModeToggle.addEventListener("click", () => {
+    const isDarkMode = document.body.classList.toggle("dark-mode");
+    if (isDarkMode) {
+      toggleIcon.src = sunIcon;
+      localStorage.setItem("theme", "dark");
+    } else {
+      toggleIcon.src = moonIcon;
+      localStorage.setItem("theme", "light");
+    }
+  });
 });

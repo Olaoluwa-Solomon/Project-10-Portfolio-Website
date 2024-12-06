@@ -103,6 +103,71 @@ img {
   padding-bottom: 2rem;
 }
 
+/* =============== DARK MODE =================== */
+:root {
+  --background-light: #ffffff;
+  --background-dark: #1a1a1a;
+  --text-light: #000000;
+  --text-dark: #ffffff;
+}
+
+.toggle-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  position: absolute;
+  top: 22px;
+  right: 50px;
+}
+
+.toggle-btn img {
+  width: 24px;
+  height: 24px;
+}
+
+body.dark-mode {
+  background-color: var(--background-dark);
+  color: var(--text-dark);
+}
+
+body.dark-mode .l-header {
+  background-color: var(--background-dark);
+  box-shadow: 0 1px 4px rgba(210, 134, 71, 0.878);
+}
+
+body.dark-mode .l-header .nav__logo:nth-of-type(2) {
+  color: white;
+}
+
+body.dark-mode .nav__link {
+  color: white;
+}
+
+body.dark-mode .l-header .nav__toggle {
+  color: white;
+}
+
+body.dark-mode .contact-col ::placeholder {
+  color: rgba(255, 255, 255, 0.671);
+}
+
+body.dark-mode .contact-col .contact__input {
+  background-color: var(--first-color);
+  color: rgba(255, 255, 255, 0.786);
+}
+
+body.darkmode .skills__data {
+  box-shadow: 0 1px 4px rgba(238, 237, 236, 0.972);
+}
+@media screen and (max-width: 767px) {
+  .toggle-btn {
+    background-color: var(--first-color);
+    border-radius: 50px;
+    margin-top: 10px;
+  }
+}
+
 /*================ LAYOUT ================*/
 .bd-grid {
   max-width: 1024px;
@@ -230,7 +295,7 @@ img {
 .download-icon {
   margin-left: 5px;
   font-size: 20px;
-  animation: rapidMoveDown 0.7s infinite;
+  animation: rapidMoveDown 1s infinite;
 }
 
 /* ============ Download Icon Animation ============= */
@@ -239,13 +304,13 @@ img {
     transform: translateY(0);
   }
   12% {
-    transform: translateY(10px);
+    transform: translateY(6px);
   }
   24% {
-    transform: translateY(0);
+    transform: translateY(7px);
   }
   100% {
-    transform: translateY(0);
+    transform: translateY(0px);
   }
 }
 
